@@ -1,0 +1,2 @@
+assignment2
+-DCATKIN_DEVEL_PREFIX=/home/rahul/git_ws/AuE893Spring20_NararahariRahulM/assignment2/devel -DCMAKE_INSTALL_PREFIX=/home/rahul/git_ws/AuE893Spring20_NararahariRahulM/assignment2/install -G Unix Makefiles

@@ -25,7 +25,7 @@ class LineFollower(object):
 
         # We get image dimensions and crop the parts of the image we dont need
         height, width, channels = cv_image.shape
-        crop_img = cv_image[(height)/2+160:(height)/2+180][1:width]
+        crop_img = cv_image[(height) + 100:(height) + 120][1:width]
         # Convert from RGB to HSV
         hsv = cv2.cvtColor(crop_img, cv2.COLOR_BGR2HSV)
 
@@ -61,11 +61,13 @@ class LineFollower(object):
         """
         print('----info----')
         # print(height,width,channels)
-        print(cx,cy)
+        print('cx,cy',cx,cy)
         err = cx - height/2
+        # print('err',err)
         twist_object = Twist()
-        twist_object.linear.x = 0.05
-        twist_object.angular.z = -float(err)/2000
+        twist_object.linear.x = 0.00
+        twist_object.angular.z = 0 # -float(err)/2000
+        print(twist_object.linear.x,twist_object.angular.z)
 
         # twist_object =  Twist()
         # twist_object.linear.x = 0.07

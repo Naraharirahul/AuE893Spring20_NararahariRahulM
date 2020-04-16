@@ -56,16 +56,6 @@ CMAKE_BINARY_DIR = /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -78,38 +68,16 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
 
-.PHONY : edit_cache/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target test
 test:
@@ -122,16 +90,48 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
 
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
+# Special rule for the target install/local
+install/local/fast: install/local
 
-.PHONY : rebuild_cache/fast
+.PHONY : install/local/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -166,34 +166,34 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule:
-	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule
-.PHONY : auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule
+auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule:
+	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule
+.PHONY : auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
-gazebo_msgs_generate_messages_lisp: auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule
+trajectory_msgs_generate_messages_py: auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule
 
-.PHONY : gazebo_msgs_generate_messages_lisp
+.PHONY : trajectory_msgs_generate_messages_py
 
 # fast build rule for target.
-gazebo_msgs_generate_messages_lisp/fast:
-	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/build.make auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/build
-.PHONY : gazebo_msgs_generate_messages_lisp/fast
+trajectory_msgs_generate_messages_py/fast:
+	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build.make auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build
+.PHONY : trajectory_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule:
-	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule
-.PHONY : auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule
+auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule:
+	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
+.PHONY : auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-gazebo_msgs_generate_messages_py: auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule
+trajectory_msgs_generate_messages_lisp: auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
 
-.PHONY : gazebo_msgs_generate_messages_py
+.PHONY : trajectory_msgs_generate_messages_lisp
 
 # fast build rule for target.
-gazebo_msgs_generate_messages_py/fast:
-	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_msgs_generate_messages_py.dir/build.make auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_msgs_generate_messages_py.dir/build
-.PHONY : gazebo_msgs_generate_messages_py/fast
+trajectory_msgs_generate_messages_lisp/fast:
+	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build.make auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build
+.PHONY : trajectory_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/rule:
@@ -226,51 +226,6 @@ gazebo_msgs_generate_messages_cpp/fast:
 .PHONY : gazebo_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
-auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/rule
-.PHONY : auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-gazebo_msgs_generate_messages_nodejs: auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : gazebo_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-gazebo_msgs_generate_messages_nodejs/fast:
-	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/build.make auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/build
-.PHONY : gazebo_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/tf_generate_messages_cpp.dir/rule:
-	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/tf_generate_messages_cpp.dir/rule
-.PHONY : auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/tf_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_cpp: auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/tf_generate_messages_cpp.dir/rule
-
-.PHONY : tf_generate_messages_cpp
-
-# fast build rule for target.
-tf_generate_messages_cpp/fast:
-	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/tf_generate_messages_cpp.dir/build.make auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/tf_generate_messages_cpp.dir/build
-.PHONY : tf_generate_messages_cpp/fast
-
-# Convenience name for target.
-auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/tf_generate_messages_nodejs.dir/rule:
-	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/tf_generate_messages_nodejs.dir/rule
-.PHONY : auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/tf_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_nodejs: auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/tf_generate_messages_nodejs.dir/rule
-
-.PHONY : tf_generate_messages_nodejs
-
-# fast build rule for target.
-tf_generate_messages_nodejs/fast:
-	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/tf_generate_messages_nodejs.dir/build.make auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/tf_generate_messages_nodejs.dir/build
-.PHONY : tf_generate_messages_nodejs/fast
-
-# Convenience name for target.
 auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_ros_gencfg.dir/rule:
 	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_ros_gencfg.dir/rule
 .PHONY : auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_ros_gencfg.dir/rule
@@ -286,64 +241,19 @@ gazebo_ros_gencfg/fast:
 .PHONY : gazebo_ros_gencfg/fast
 
 # Convenience name for target.
-auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/tf_generate_messages_eus.dir/rule:
-	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/tf_generate_messages_eus.dir/rule
-.PHONY : auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/tf_generate_messages_eus.dir/rule
+auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/rule
+.PHONY : auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-tf_generate_messages_eus: auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/tf_generate_messages_eus.dir/rule
+gazebo_msgs_generate_messages_nodejs: auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/rule
 
-.PHONY : tf_generate_messages_eus
+.PHONY : gazebo_msgs_generate_messages_nodejs
 
 # fast build rule for target.
-tf_generate_messages_eus/fast:
-	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/tf_generate_messages_eus.dir/build.make auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/tf_generate_messages_eus.dir/build
-.PHONY : tf_generate_messages_eus/fast
-
-# Convenience name for target.
-auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/tf_generate_messages_lisp.dir/rule:
-	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/tf_generate_messages_lisp.dir/rule
-.PHONY : auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/tf_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_lisp: auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/tf_generate_messages_lisp.dir/rule
-
-.PHONY : tf_generate_messages_lisp
-
-# fast build rule for target.
-tf_generate_messages_lisp/fast:
-	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/tf_generate_messages_lisp.dir/build.make auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/tf_generate_messages_lisp.dir/build
-.PHONY : tf_generate_messages_lisp/fast
-
-# Convenience name for target.
-auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/tf_generate_messages_py.dir/rule:
-	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/tf_generate_messages_py.dir/rule
-.PHONY : auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/tf_generate_messages_py.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_py: auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/tf_generate_messages_py.dir/rule
-
-.PHONY : tf_generate_messages_py
-
-# fast build rule for target.
-tf_generate_messages_py/fast:
-	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/tf_generate_messages_py.dir/build.make auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/tf_generate_messages_py.dir/build
-.PHONY : tf_generate_messages_py/fast
-
-# Convenience name for target.
-auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule:
-	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
-.PHONY : auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-trajectory_msgs_generate_messages_cpp: auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : trajectory_msgs_generate_messages_cpp
-
-# fast build rule for target.
-trajectory_msgs_generate_messages_cpp/fast:
-	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build.make auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build
-.PHONY : trajectory_msgs_generate_messages_cpp/fast
+gazebo_msgs_generate_messages_nodejs/fast:
+	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/build.make auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/build
+.PHONY : gazebo_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule:
@@ -361,34 +271,49 @@ trajectory_msgs_generate_messages_eus/fast:
 .PHONY : trajectory_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
-auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule:
-	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
-.PHONY : auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
+auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule:
+	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule
+.PHONY : auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-trajectory_msgs_generate_messages_lisp: auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
+gazebo_msgs_generate_messages_lisp: auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule
 
-.PHONY : trajectory_msgs_generate_messages_lisp
+.PHONY : gazebo_msgs_generate_messages_lisp
 
 # fast build rule for target.
-trajectory_msgs_generate_messages_lisp/fast:
-	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build.make auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build
-.PHONY : trajectory_msgs_generate_messages_lisp/fast
+gazebo_msgs_generate_messages_lisp/fast:
+	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/build.make auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/build
+.PHONY : gazebo_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
-auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
-.PHONY : auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
+auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule:
+	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule
+.PHONY : auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
-trajectory_msgs_generate_messages_nodejs: auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
+gazebo_msgs_generate_messages_py: auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule
 
-.PHONY : trajectory_msgs_generate_messages_nodejs
+.PHONY : gazebo_msgs_generate_messages_py
 
 # fast build rule for target.
-trajectory_msgs_generate_messages_nodejs/fast:
-	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build.make auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build
-.PHONY : trajectory_msgs_generate_messages_nodejs/fast
+gazebo_msgs_generate_messages_py/fast:
+	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_msgs_generate_messages_py.dir/build.make auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/gazebo_msgs_generate_messages_py.dir/build
+.PHONY : gazebo_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule:
+	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
+.PHONY : auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+trajectory_msgs_generate_messages_cpp: auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : trajectory_msgs_generate_messages_cpp
+
+# fast build rule for target.
+trajectory_msgs_generate_messages_cpp/fast:
+	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build.make auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build
+.PHONY : trajectory_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/spawn_robot_tools_pkg_xacro_generated_to_devel_space_.dir/rule:
@@ -406,19 +331,19 @@ spawn_robot_tools_pkg_xacro_generated_to_devel_space_/fast:
 .PHONY : spawn_robot_tools_pkg_xacro_generated_to_devel_space_/fast
 
 # Convenience name for target.
-auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule:
-	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule
-.PHONY : auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule
+auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
+.PHONY : auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-trajectory_msgs_generate_messages_py: auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule
+trajectory_msgs_generate_messages_nodejs: auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
 
-.PHONY : trajectory_msgs_generate_messages_py
+.PHONY : trajectory_msgs_generate_messages_nodejs
 
 # fast build rule for target.
-trajectory_msgs_generate_messages_py/fast:
-	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build.make auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build
-.PHONY : trajectory_msgs_generate_messages_py/fast
+trajectory_msgs_generate_messages_nodejs/fast:
+	cd /home/nmalaya/folders/AuE893Spring20_NararahariRahulM/catkin_ws/build && $(MAKE) -f auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build.make auefinals/spawn_robot_tools/spawn_robot_tools_pkg/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build
+.PHONY : trajectory_msgs_generate_messages_nodejs/fast
 
 # Help Target
 help:
@@ -426,30 +351,25 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... list_install_components"
 	@echo "... install"
-	@echo "... gazebo_msgs_generate_messages_lisp"
-	@echo "... gazebo_msgs_generate_messages_py"
+	@echo "... rebuild_cache"
+	@echo "... test"
+	@echo "... install/local"
+	@echo "... trajectory_msgs_generate_messages_py"
+	@echo "... trajectory_msgs_generate_messages_lisp"
+	@echo "... edit_cache"
 	@echo "... gazebo_msgs_generate_messages_eus"
 	@echo "... gazebo_msgs_generate_messages_cpp"
-	@echo "... gazebo_msgs_generate_messages_nodejs"
-	@echo "... tf_generate_messages_cpp"
-	@echo "... tf_generate_messages_nodejs"
 	@echo "... gazebo_ros_gencfg"
-	@echo "... tf_generate_messages_eus"
-	@echo "... edit_cache"
-	@echo "... tf_generate_messages_lisp"
-	@echo "... tf_generate_messages_py"
-	@echo "... trajectory_msgs_generate_messages_cpp"
+	@echo "... gazebo_msgs_generate_messages_nodejs"
 	@echo "... trajectory_msgs_generate_messages_eus"
-	@echo "... trajectory_msgs_generate_messages_lisp"
-	@echo "... trajectory_msgs_generate_messages_nodejs"
-	@echo "... spawn_robot_tools_pkg_xacro_generated_to_devel_space_"
+	@echo "... gazebo_msgs_generate_messages_lisp"
+	@echo "... gazebo_msgs_generate_messages_py"
+	@echo "... trajectory_msgs_generate_messages_cpp"
+	@echo "... list_install_components"
 	@echo "... install/strip"
-	@echo "... trajectory_msgs_generate_messages_py"
-	@echo "... install/local"
-	@echo "... test"
-	@echo "... rebuild_cache"
+	@echo "... spawn_robot_tools_pkg_xacro_generated_to_devel_space_"
+	@echo "... trajectory_msgs_generate_messages_nodejs"
 .PHONY : help
 
 
